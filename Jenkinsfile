@@ -54,17 +54,17 @@ pipeline {
                 }
             }
         }
-//         stage ('trigger the frontend-deploy') {
-//             steps {
-//                 script {
-//                     def params = [
-//                     string(name: 'appversion', value: "${appversion}")
-//                 ]
-//                     build job: 'frontend-deployment', parameters: params, wait: false
-// }
-//         }
+        stage ('trigger the frontend-deploy') {
+            steps {
+                script {
+                    def params = [
+                    string(name: 'appversion', value: "${appversion}")
+                ]
+                    build job: 'frontend-deployment', parameters: params, wait: false
+}
+        }
 
-//                 }
+                }
             }
         
     
