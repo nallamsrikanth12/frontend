@@ -43,7 +43,7 @@ pipeline {
                 }
             }
         }
-        }
+        
         stage('Nexus artifacts uploader') {
             steps {
                 script {
