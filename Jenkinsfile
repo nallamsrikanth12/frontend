@@ -30,6 +30,18 @@ pipeline {
                     ls -ltr
                 """
             }
+        stage('scan the code') {
+            environment {
+                scannerHome = tool 'sonar'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sonar') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
         }
         stage('Nexus artifacts uploader') {
             steps {
