@@ -30,6 +30,7 @@ pipeline {
                     ls -ltr
                 """
             }
+        }
         stage('scan the code') {
             environment {
                 scannerHome = tool 'sonar'
